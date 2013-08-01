@@ -1,5 +1,6 @@
 #include <boost/filesystem.hpp>
-#include <iostream>
+#include <string>
+#include <stdio.h>
 
 int main()
 {
@@ -7,7 +8,8 @@ int main()
     boost::filesystem::recursive_directory_iterator itr(path);
     while (itr != boost::filesystem::recursive_directory_iterator())
     {
-        std::cout << itr->path().string() << std::endl;
+        printf("%s\n", itr->path().string().c_str());
+//        std::cout << itr->path().string() << std::endl;
         ++itr;
     }
     return 0;
